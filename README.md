@@ -4,6 +4,7 @@ Foi criado um aplicativo para o parceiro São Camilo, chamado YE Gestão de Saú
 O desenvolvimento desse aplicativo foi realizado utilizando um conjunto de tecnologias modernas e robustas, garantindo uma experiência eficiente e intuitiva para os usuários. Principais tecnologias que foram empregadas neste projeto:
 
 **Backend: Node.js e Express**
+
 **Banco de Dados: Postgressql**
 
 Este projeto tem o intuito de aplicarmos nossos conhecimentos em projetos reais, colaborando com organizações externas e fortalecendo habilidades técnicas e sociais. Além disso, o projeto está integrado à trilha extensionista do curso, promovendo ações que beneficiam a comunidade e estabelecendo vínculos importantes com o setor social e empresarial.
