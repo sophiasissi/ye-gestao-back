@@ -45,6 +45,17 @@ export class ConsultationController {
             return res.status(204).json({ message: 'Nenhuma consulta encontrada' })
         }
 
+        for (let i = 0; i < consultations.length - 1; i++) {
+            for (let j = 0; j < consultations.length - 1 - i; j++) {
+                if (consultations[j].id > consultations[j + 1].id) {
+                    // Swap the elements
+                    let temp = consultations[j];
+                    consultations[j] = consultations[j + 1];
+                    consultations[j + 1] = temp;
+                }
+            }
+        }
+
         res.status(200).json(consultations)
     }
 

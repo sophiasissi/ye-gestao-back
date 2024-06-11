@@ -60,6 +60,17 @@ export class BloodPressureController {
             return res.status(204).json({ message: 'Nenhuma pressão arterial cadastrada'})
         }
 
+        for (let i = 0; i < bloodPressure.length - 1; i++) {
+            for (let j = 0; j < bloodPressure.length - 1 - i; j++) {
+                if (bloodPressure[j].id > bloodPressure[j + 1].id) {
+                    // Swap the elements
+                    let temp = bloodPressure[j];
+                    bloodPressure[j] = bloodPressure[j + 1];
+                    bloodPressure[j + 1] = temp;
+                }
+            }
+        }
+
         return res.status(200).json(bloodPressure)
     }
 

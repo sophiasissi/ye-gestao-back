@@ -61,6 +61,18 @@ export class ImcController {
         if(imcs.length == 0) {
             return res.status(204).json({ message: 'Nenhum IMC encontrado' });
         }
+
+        for (let i = 0; i < imcs.length - 1; i++) {
+            for (let j = 0; j < imcs.length - 1 - i; j++) {
+                if (imcs[j].id > imcs[j + 1].id) {
+                    // Swap the elements
+                    let temp = imcs[j];
+                    imcs[j] = imcs[j + 1];
+                    imcs[j + 1] = temp;
+                }
+            }
+        }
+
         return res.status(200).json(imcs);
     }
 
