@@ -42,6 +42,17 @@ export class MedicationController {
             return res.status(204).json({ message: 'Nenhuma medicação encontrada' });
         }
 
+        for (let i = 0; i < medications.length - 1; i++) {
+            for (let j = 0; j < medications.length - 1 - i; j++) {
+                if (medications[j].id > medications[j + 1].id) {
+                    // Swap the elements
+                    let temp = medications[j];
+                    medications[j] = medications[j + 1];
+                    medications[j + 1] = temp;
+                }
+            }
+        }
+
         return res.status(200).json(medications);
     }
 
