@@ -50,6 +50,18 @@ export class GlucoseController {
         if(glucoses.length === 0) {
             return res.status(204).json({ message: 'Nenhuma glicose cadastrada'})
         }
+
+        for (let i = 0; i < glucoses.length - 1; i++) {
+            for (let j = 0; j < glucoses.length - 1 - i; j++) {
+                if (glucoses[j].id > glucoses[j + 1].id) {
+                    // Swap the elements
+                    let temp = glucoses[j];
+                    glucoses[j] = glucoses[j + 1];
+                    glucoses[j + 1] = temp;
+                }
+            }
+        }
+
         return res.status(200).json(glucoses)
     }
 
